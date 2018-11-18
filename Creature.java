@@ -15,7 +15,9 @@ public abstract class Creature
     private int str;
     private int max_hp;
     private int hp;
-    
+    private int dmg;
+    private boolean ad;
+    Randomizer r = new Randomizer();
     /**
      * default constructor - this should never actually run
      */
@@ -34,7 +36,9 @@ public abstract class Creature
      * @param hp the health of the creature at the start of the simulation, and the current health levels during battle
      */
     public Creature (int str, int hp) {
-       //implement this
+       this.str = str;
+       this.hp = hp;
+       max_hp = hp;
     }
     
     
@@ -43,8 +47,8 @@ public abstract class Creature
      * @return a value between 1 and str to be used to cause damage to another creature
      */
     public int damage(){
-        // implement this
-        return 0;
+        dmg = r.nextInt(str - 1)+1;
+        return dmg;
     }
     
     
@@ -53,8 +57,13 @@ public abstract class Creature
      * @return true when current hit point level is greater than zero
      */
     public boolean isAlive() {
-        //implement this
-        return false; //change this
+        if (hp <= 0){
+            ad = false;
+        }
+        else{
+            ad = true;
+        }
+        return ad;
     }
     
     /**
@@ -62,8 +71,13 @@ public abstract class Creature
      * @return true when current hit point level is less than or equal to zero
      */
     public boolean isDead() {
-        //implement this
-        return false; //change this
+        if (hp <= 0){
+            ad = true;
+        }
+        else{
+            ad = false;
+        }
+        return ad;
     }
     
     
@@ -73,7 +87,7 @@ public abstract class Creature
      * @param damage value to remove from hit point count
      */
     public void takeDamage(int damage) {
-        // implement this
+        hp = hp - damage;
     }
     
 }
