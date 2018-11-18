@@ -15,8 +15,9 @@ public abstract class Creature
     private int str;
     private int max_hp;
     private int hp;
-    private int dmg;
-    private boolean ad;
+    protected int dmg;
+    private boolean alive;
+    private boolean dead;
     Randomizer r = new Randomizer();
     /**
      * default constructor - this should never actually run
@@ -58,12 +59,12 @@ public abstract class Creature
      */
     public boolean isAlive() {
         if (hp <= 0){
-            ad = false;
+            alive = false;
         }
         else{
-            ad = true;
+            alive = true;
         }
-        return ad;
+        return alive;
     }
     
     /**
@@ -72,12 +73,12 @@ public abstract class Creature
      */
     public boolean isDead() {
         if (hp <= 0){
-            ad = true;
+            dead = true;
         }
         else{
-            ad = false;
+            dead = false;
         }
-        return ad;
+        return dead;
     }
     
     

@@ -1,6 +1,6 @@
 
 /**
- * Write a description of class Elf here.
+ * This is the class of the Elf character.
  *
  * @author Austin Raymond
  * @version 11.18.2018
@@ -26,5 +26,13 @@ public class Elf extends Creature
     }
     public int damage(){
         magical = Randomizer.nextInt(10-1)+1;
+        dmg = super.damage();
+        if (magical%10 == 0){
+            dmg = dmg*2;
+        }
+        else{
+            dmg = dmg;
+        }
+        return dmg;
     }
 }
