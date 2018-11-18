@@ -13,6 +13,8 @@ public class War
     Object[] army2 = new Object[100];
     private int index1 = 0;
     private int index2 = 0;
+    Object soldier1;
+    Object soldier2;
     /**
      * Constructor for objects of class War
      */
@@ -51,13 +53,34 @@ public class War
     }
     public void doBattle(){
         while(index1 < 100 || index2 <100){
-            if (army1[index1] instanceof Human || army2[index2] instanceof Human){
+            if (army1[index1] instanceof Human){
+                soldier1 = army1[index1];
+            }
+            else if (army1[index1] instanceof Elf){
+                soldier1 = army1[index1];
+            }
+            else if (army1[index1] instanceof Cyberdemon){
+                soldier1 = army1[index1];
+            }
+            else if (army1[index1] instanceof Balrog){
+                soldier1 = army1[index1];
+            }
+            if (army2[index2] instanceof Human){
+                soldier2 = army2[index2];
+            }
+            else if (army2[index2] instanceof Elf){
+                soldier2 = army2[index2];
+            }
+            else if (army2[index2] instanceof Cyberdemon){
+                soldier2 = army2[index2];
+            }
+            else if (army2[index2] instanceof Balrog){
+                soldier2 = army2[index2];
+            }
+            while (soldier1.isAlive && soldier2.isAlive){
+                soldier2.takeDamage();
                 
             }
-            else if (army1[index1] instanceof Elf || army2[index2] instanceof Elf){
-                
-            }
-            else if 
         }
         if (index1 == 100 && index2 != 100){
             System.out.println("Army 1 has won");
