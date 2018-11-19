@@ -9,12 +9,12 @@ public class War
 {
     private int counter;
     private int c;
-    Object[] army1 = new Object[100];
-    Object[] army2 = new Object[100];
+    Creature[] army1 = new Creature[100];
+    Creature[] army2 = new Creature[100];
     private int index1 = 0;
     private int index2 = 0;
-    Object soldier1;
-    Object soldier2;
+    Creature soldier1;
+    Creature soldier2;
     /**
      * Constructor for objects of class War
      */
@@ -52,34 +52,18 @@ public class War
         }
     }
     public void doBattle(){
-        while(index1 < 100 || index2 <100){
-            if (army1[index1] instanceof Human){
-                soldier1 = army1[index1];
+        while(index1 < 100 && index2 < 100){
+            soldier1 = army1[index1];
+            soldier2 = army2[index2];
+            while (soldier1.isAlive() && soldier2.isAlive()){
+                soldier1.takeDamage(soldier2.damage());
+                soldier2.takeDamage(soldier2.damage());
             }
-            else if (army1[index1] instanceof Elf){
-                soldier1 = army1[index1];
+            if (soldier1.isDead()){
+                index1++;
             }
-            else if (army1[index1] instanceof Cyberdemon){
-                soldier1 = army1[index1];
-            }
-            else if (army1[index1] instanceof Balrog){
-                soldier1 = army1[index1];
-            }
-            if (army2[index2] instanceof Human){
-                soldier2 = army2[index2];
-            }
-            else if (army2[index2] instanceof Elf){
-                soldier2 = army2[index2];
-            }
-            else if (army2[index2] instanceof Cyberdemon){
-                soldier2 = army2[index2];
-            }
-            else if (army2[index2] instanceof Balrog){
-                soldier2 = army2[index2];
-            }
-            while (soldier1.isAlive && soldier2.isAlive){
-                soldier2.takeDamage();
-                
+            if (soldier2.isDead()){
+                index2++;
             }
         }
         if (index1 == 100 && index2 != 100){
