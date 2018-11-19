@@ -15,6 +15,8 @@ public class War
     private int index2 = 0;
     Creature soldier1;
     Creature soldier2;
+    private int b = 0;
+    private int b2 = 0;
     /**
      * Constructor for objects of class War
      */
@@ -32,7 +34,13 @@ public class War
                 army1[counter] = new Cyberdemon();
             }
             else if (c >= 13 || c <= 16){
-                army1[counter] = new Balrog();
+                if (b <= 2){
+                    army1[counter] = new Balrog();
+                    ++b;
+                }
+                else{
+                    --counter;
+                }
             }
         }
         for (counter = 0; counter < 100; ++counter){
@@ -47,7 +55,14 @@ public class War
                 army2[counter] = new Cyberdemon();
             }
             else if (c >= 13 || c <= 16){
-                army2[counter] = new Balrog();
+                if (b2 <= 2){
+                    army2[counter] = new Balrog();
+                    ++b2;
+                }
+                else{
+                    --counter;
+                }
+                
             }
         }
     }
