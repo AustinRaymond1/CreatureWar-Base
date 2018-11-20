@@ -26,7 +26,7 @@ public class Demon extends Creature
     public int damage(){
         magical = Randomizer.nextInt(50-1)+1;
         dmg = super.damage();
-        if (magical%5 == 0){
+        if (magical%50 == 0){
             dmg += 50;
         }
         else{
