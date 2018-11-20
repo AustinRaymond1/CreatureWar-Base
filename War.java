@@ -23,17 +23,20 @@ public class War
     public War()
     {
         for (counter = 0; counter < 100; ++counter){
-            c = Randomizer.nextInt(16-1)+1;
-            if (c >= 1 || c <= 4){
+            c = Randomizer.nextInt(25-1)+1;
+            if (c >= 1 && c <= 5){
                 army1[counter] = new Human();
             }
-            else if (c >= 5 || c <= 8){
+            else if (c >= 6 && c <= 10){
                 army1[counter] = new Elf();
             }
-            else if (c >= 9 || c <= 12){
+            else if (c >= 11 && c <= 15){
                 army1[counter] = new Cyberdemon();
             }
-            else if (c >= 13 || c <= 16){
+            else if (c >= 16 && c <= 20){
+                army1[counter] = new Demon();
+            }
+            else if (c >= 21 && c <= 25){
                 if (b <= 2){
                     army1[counter] = new Balrog();
                     ++b;
@@ -44,17 +47,20 @@ public class War
             }
         }
         for (counter = 0; counter < 100; ++counter){
-            c = Randomizer.nextInt(16-1)+1;
-            if (c >= 1 || c <= 4){
+            c = Randomizer.nextInt(25-1)+1;
+            if (c >= 1 && c <= 5){
                 army2[counter] = new Human();
             }
-            else if (c >= 5 || c <= 8){
+            else if (c >= 6 && c <= 10){
                 army2[counter] = new Elf();
             }
-            else if (c >= 9 || c <= 12){
+            else if (c >= 11 && c <= 15){
                 army2[counter] = new Cyberdemon();
             }
-            else if (c >= 13 || c <= 16){
+            else if (c >= 16 && c <= 20){
+                army2[counter] = new Demon();
+            }
+            else if (c >= 21 && c <= 25){
                 if (b2 <= 2){
                     army2[counter] = new Balrog();
                     ++b2;

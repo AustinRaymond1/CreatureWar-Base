@@ -5,7 +5,7 @@
  * @author Austin Raymond
  * @version 11.18.2018
  */
-public class Cyberdemon extends Demon
+public class Cyberdemon extends Creature
 {
     private static final int max_hp = 100;
     private static final int min_hp = 25;

@@ -5,7 +5,7 @@
  * @author Austin Raymond
  * @version 11.18.2018
  */
-public class Balrog extends Demon
+public class Balrog extends Creature
 {
     private static final int max_hp = 200;
     private static final int min_hp = 80;
