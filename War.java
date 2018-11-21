@@ -77,13 +77,15 @@ public class War
             soldier2 = army2[index2];
             while (soldier1.isAlive() && soldier2.isAlive()){
                 soldier1.takeDamage(soldier2.damage());
-                soldier2.takeDamage(soldier2.damage());
-            }
-            if (soldier1.isDead()){
+                if (soldier1.isDead()){
                 index1++;
+                break;
             }
-            if (soldier2.isDead()){
+                soldier2.takeDamage(soldier2.damage());
+                if (soldier2.isDead()){
                 index2++;
+                break;
+            }
             }
         }
         if (index1 == 100 && index2 != 100){
