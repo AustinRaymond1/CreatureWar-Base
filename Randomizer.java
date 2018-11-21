@@ -3,8 +3,8 @@ import java.util.Random;
 /**
  * Write a description of class Randomizer here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Austin Raymond
+ * @version 11.18.2018
  */
 public class Randomizer
 {
