@@ -35,4 +35,7 @@ public class Elf extends Creature
         }
         return dmg;
     }
+    public String toString(){
+        return "Elf";
+    }
 }

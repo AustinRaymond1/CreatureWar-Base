@@ -34,4 +34,7 @@ public class Demon extends Creature
         }
         return dmg;
     }
+    public String toString(){
+        return "Demon";
+    }
 }

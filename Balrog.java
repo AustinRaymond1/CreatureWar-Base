@@ -29,4 +29,7 @@ public class Balrog extends Creature
         damage = dmg1 + dmg2;
         return damage;
     }
+    public String toString(){
+        return "Balrog";
+    }
 }

@@ -20,4 +20,7 @@ public class Cyberdemon extends Creature
         super(Randomizer.nextInt(max_hp-min_hp)+min_hp,
             Randomizer.nextInt(max_str-min_str)+min_str);
     }
+    public String toString(){
+        return "Cyberdemon";
+    }
 }
