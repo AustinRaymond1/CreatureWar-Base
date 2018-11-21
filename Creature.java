@@ -7,8 +7,8 @@
  * the creature is alive or dead. The creature is also responsible for calculating
  * damage delivered based on the creature's strength (1 to str) 
  * 
- * @author (your name here)
- * @version (version number or date here)
+ * @author Austin Raymond
+ * @version 11.18.2018
  */
 public abstract class Creature
 {
